@@ -70,6 +70,7 @@ input[type=text] {
 
 input[type=submit] {
   border: none;
+  margin-right: 1rem;
   background-color: #102A43;
   color: #F0F4F8; }
 

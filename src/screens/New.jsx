@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import * as api from '../api';
+import {
+  navigate,
+  Link
+} from '@reach/router';
 import Form from '../components/form/Form';
 import InputField from '../components/form/InputField';
 import Container from '../components/layout/Container';
@@ -14,7 +18,16 @@ const New = () => {
   const [errors, setErrors] = useState([]);
 
   const create = () => {
-    api.create(api.DEFAULT_NAME, {});
+    const game = {
+      name: name,
+      author: author,
+      description: description,
+      difficulty: difficulty,
+      gamingTime: gamingTime,
+    }
+
+    api.create(api.DEFAULT_NAME, game);
+    navigate("/");
   }
 
   return (
@@ -47,6 +60,7 @@ const New = () => {
             onChange={(e) => setGamingTime(e.target.value)} 
           />
           <input type="submit" value="Crear" onClick={create} />
+          <Link to="/" className="btn--action">Cancelar</Link>
         </Form>
       </Container>
     </Screen>  
