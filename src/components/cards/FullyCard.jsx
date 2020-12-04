@@ -1,11 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from '@reach/router';
-//import * as api from '../../api';
 import game from '../../screens/Edit'
-import Edit from '../../screens/Edit'
-
-//const game = api.show(api.DEFAULT_NAME);
-
 
 const FullyCard = (props) => (
     <Link to={props.to} className="card">
@@ -21,7 +16,6 @@ const FullyCard = (props) => (
      <p>Tiempo de juego: {game.gamingTime}</p>
     </div>
 </Link>
-
 )
 
 export default FullyCard;
