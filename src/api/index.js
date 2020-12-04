@@ -38,8 +38,8 @@ const destroy = (name, id) => {
 };
 
 const destroyByID = (data, id) => {
-  return data.filter( (game, index) => (
-    index !== id ? true : false
+  return data.filter( (_, index) => (
+    index !== parseInt(id) ? true : false
   )).map((game) => game);
 };
 

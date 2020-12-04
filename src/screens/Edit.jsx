@@ -15,8 +15,8 @@ const Edit = (props) => {
     const [description, setDescription] = useState('');
     const [gamingTime, setGamingTime] = useState('');
     const [difficulty, setDifficulty] = useState('');
-    // TODO: Validation
-    const [errors, setErrors] = useState([]);
+        // TODO: Validation
+       //const [errors, setErrors] = useState([]);
   
     useEffect(() => {
         const game = api.show(api.DEFAULT_NAME,props.id);
@@ -38,6 +38,11 @@ const Edit = (props) => {
   
       api.update(api.DEFAULT_NAME, updatedGame, props.id);
       navigate("/");
+    }
+
+    const destroy = () => {
+        api.destroy(api.DEFAULT_NAME, props.id);
+        navigate("/");
     }
   
     return (
@@ -71,9 +76,12 @@ const Edit = (props) => {
             />
             <input type="submit" value="Actualizar" onClick={update} />
             <Link to="/" className="btn--action">Cancelar</Link>
+
+            <br />
+            <a href="#" onClick={destroy} className="btn">Borrar</a>
           </Form>
         </Container>
-      </Screen>  
+      </Screen>
     )
   };
 

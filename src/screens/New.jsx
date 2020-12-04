@@ -16,7 +16,7 @@ const New = () => {
   const [gamingTime, setGamingTime] = useState('');
   const [difficulty, setDifficulty] = useState('');
       // TODO: Validation
-  const [errors, setErrors] = useState([]);
+    //const [errors, setErrors] = useState([]);
 
   const create = () => {
     const game = {

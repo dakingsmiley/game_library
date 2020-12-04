@@ -3,6 +3,7 @@ import Container from '../components/layout/Container';
 import * as api from '../api';
 import Screen from '../components/layout/Screen';
 import EmptyCard from '../components/cards/EmptyCard';
+import FullyCard from '../components/cards/FullyCard';
 import { Link } from '@reach/router';
 
 const Index = () => {
@@ -20,21 +21,11 @@ const Index = () => {
             <EmptyCard to="new" />
         ) : (
           <>
-            {games.map((game, index) => (
-               <Link to={`${index}/edit`} className="card">
-                 <div className="card__header">
-                  <h2>{game.name}</h2>
-                   <p>{game.author}</p>
-                 </div>
-                 <div className="card__content">
-                   <p>{game.description}</p>
-                 </div>
-                 <div className="card__footer">
-                  <p>Dificultad: {game.difficulty}</p>
-                  <p>Tiempo de juego: {game.gamingTime}</p>
-                 </div>
-             </Link>
-            ))}
+          {games.map((game, index) => (
+            <FullyCard to={`${index}/edit`} game={game} />
+          ))}
+
+          <Link to="/new" className="btn-action">Añadir</Link>
           </>
         )}
       </Container>
