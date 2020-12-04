@@ -13,7 +13,7 @@ const FullyCard = (props) => (
     </div>
     <div className="card__footer">
      <p>Dificultad: {props.game.difficulty}</p>
-     <p>Tiempo de juego: {game.gamingTime}</p>
+     <p>Tiempo de juego: {props.game.gamingTime}</p>
     </div>
 </Link>
 )

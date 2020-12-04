@@ -4,6 +4,7 @@ import * as api from '../api';
 import Screen from '../components/layout/Screen';
 import EmptyCard from '../components/cards/EmptyCard';
 import FullyCard from '../components/cards/FullyCard';
+import AddyCard from '../components/cards/AddyCard';
 import { Link } from '@reach/router';
 
 const Index = () => {
@@ -24,8 +25,7 @@ const Index = () => {
           {games.map((game, index) => (
             <FullyCard to={`${index}/edit`} game={game} />
           ))}
-
-          <Link to="/new" className="btn-action">Añadir</Link>
+            <AddyCard to="/new" />
           </>
         )}
       </Container>
