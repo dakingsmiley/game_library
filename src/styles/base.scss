@@ -44,6 +44,49 @@ code {
 }
 
 .card {
+  display:block;
+  width: 100%;
+  max-width: 200px;
+  margin: 20px;
+  padding: 4px;
+  border-radius: 5px;
+  border: 1px solid $primary-100;
+  box-shadow: 0 10px 15px 0 $primary-050;
+  text-decoration: none;
+
+  &__header{
+    border-bottom: 2px solid $primary-500;
+
+    h2{
+      font-size: 24px;
+      font-weight: bold;
+      color: $primary-900;
+    }
+    p{
+      font-size: 12px;
+      color: $primary-600;
+    }
+  }
+
+  &__content{
+    border-bottom: 1px solid $primary-200;
+
+    p{
+      color: $primary-400;
+    }
+  }
+
+  &__footer{
+    p{
+      font-size: 14px;
+      color: $primary-300;
+    }
+  }
+
+  &:hover{
+    transform: scale(1.05);
+    transition: all 0.25s ease; 
+  }
 
   &--empty{
     max-width: 600px;
@@ -66,6 +109,12 @@ code {
     @extend .btn;    
     background-color: $primary-050;
     color: $primary-900;
+  }
+
+  &--primary{
+    @extend .btn;    
+    background-color: $primary-900;
+    color: $primary-050;
   }
 }
 

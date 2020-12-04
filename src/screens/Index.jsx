@@ -3,6 +3,7 @@ import Container from '../components/layout/Container';
 import * as api from '../api';
 import Screen from '../components/layout/Screen';
 import EmptyCard from '../components/cards/EmptyCard';
+import { Link } from '@reach/router';
 
 const Index = () => {
   const [games, setGames] = useState([]);
@@ -10,6 +11,7 @@ const Index = () => {
   useEffect( () => {
     setGames(api.get(api.DEFAULT_NAME));
   }, []);
+
   return (
     <Screen>
       <Container>
@@ -19,9 +21,19 @@ const Index = () => {
         ) : (
           <>
             {games.map((game, index) => (
-              <div className="card" key={index}>
-                Tarjeta
-              </div>
+               <Link to={`${index}/edit`} className="card">
+                 <div className="card__header">
+                  <h2>{game.name}</h2>
+                   <p>{game.author}</p>
+                 </div>
+                 <div className="card__content">
+                   <p>{game.description}</p>
+                 </div>
+                 <div className="card__footer">
+                  <p>Dificultad: {game.difficulty}</p>
+                  <p>Tiempo de juego: {game.gamingTime}</p>
+                 </div>
+             </Link>
             ))}
           </>
         )}

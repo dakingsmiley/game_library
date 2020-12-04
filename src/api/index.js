@@ -24,7 +24,7 @@ const update = (name, game, id) => {
 
 const updateByID = (data, newGame, id) => {
   return data.map((game, index) => {
-    if (index === id) {
+    if (index === parseInt(id)) {
       return newGame;
     }
     return game;
